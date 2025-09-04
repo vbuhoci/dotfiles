@@ -1,0 +1,40 @@
+* Start tmux with the `tmux` command.
+
+INFO: The "<prefix>" keyword will be used frequently, by default being the Ctrl+b combo (changed to Ctrl+Space).
+
+NOTE: Tmux can have multiple sessions.
+
+* To list all sessions and select one, execute `<prefix> s`.
+
+* To rename current session, run `<prefix> $`.
+
+* To create a new session, do `<prefix> :new`.
+
+* To remove a session, either exit from all its windows, or `tmux list-sessions`, then `tmux kill-session -t <id>`.
+
+NOTE: Each session can consist of several windows (of each one that can be active at a time). 
+
+* To create a new window in the current session, run `<prefix> c`. It will automatically switch to the new window.
+
+* You can switch between windows using `<prefix> <nb>`, where <nb> can be a number from 0 to 9 (maybe even higher?).
+
+* You can also cycle between windows using `<prefix> n` (next) and `<prefix> p` (previous).
+
+* You can kill the current window with the following: `<prefix> &`.
+
+NOTE: Each window can contain multiple visible panes.
+
+* To split the current pane horizontally, perform `<prefix> %`.
+
+* To split the current pane vertically, perform `<prefix> "`.
+
+* To switch between panes, combine the <prefix> with the arrow keys (e.g.: `<prefix> <-`).
+
+* You can swap the active pane with one of the adjacent ones: `<prefix> {` and `<prefix> }`.
+
+* Press `<prefix> q` to display the ID of each pane, then hit the digit key to select the desired pane.
+
+* To zoom in or out on the current pane, use `<prefix> z`.
+
+* To close a pane, either exit from its running shell or use `<prefix> x`.
+
