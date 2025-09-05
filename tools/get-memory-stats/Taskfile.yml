@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  BIN_DIR: ./bin
+  BIN_NAME: get-memory-stats
+
+tasks:
+  default:
+    cmds:
+      - task: clean
+      - task: build
+      - task: install
+  build:
+    cmds:
+      - go build -o "{{.BIN_DIR}}/{{.BIN_NAME}}" ./cmd/main.go
+      - echo "Done!"
+  install:
+    cmds:
+      - sudo ln -fs "$(pwd)/{{.BIN_DIR}}/{{.BIN_NAME}}" "/usr/local/bin/{{.BIN_NAME}}"
+      - echo "Done!"
+  clean:
+    cmds:
+      - rm -rf "{{.BIN_DIR}}"
+      - echo "Done!"
