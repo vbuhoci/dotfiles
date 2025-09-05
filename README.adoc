@@ -1,0 +1,10 @@
+= My dotfiles
+
+:showtitle:
+:toc: auto
+:toclevels: 3
+
+== Requirements
+* Tmux
+** For tmux to work correctly, https://github.com/tmux-plugins/tpm/tree/master[TPM] (tmux plugin manager) needs to be present on the machine.
+

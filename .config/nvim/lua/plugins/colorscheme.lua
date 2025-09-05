@@ -1,4 +1,5 @@
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
+-- if true then return {} end
 
 -- In your plugin files, you can:
 -- * add extra plugins
@@ -13,49 +14,15 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      integrations = {
-        aerial = true,
-        alpha = true,
-        cmp = true,
-        dashboard = true,
-        flash = true,
-        gitsigns = true,
-        headlines = true,
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        leap = true,
-        lsp_trouble = true,
-        mason = true,
-        markdown = true,
-        mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-        },
-        navic = { enabled = true, custom_bg = "lualine" },
-        neotest = true,
-        neotree = true,
-        noice = true,
-        notify = true,
-        semantic_tokens = true,
-        telescope = true,
-        treesitter = true,
-        treesitter_context = true,
-        which_key = true,
-      },
+      auto_integrations = true,
     },
   },
 
-  -- Configure LazyVim to load defaul theme.
+  -- Configure LazyVim to load default theme.
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "gruvbox",
       colorscheme = "catppuccin-macchiato",
     },
   },

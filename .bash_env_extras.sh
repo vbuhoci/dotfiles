@@ -2,7 +2,7 @@
 alias ls='ls --color=auto'
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
-
+# ...
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -16,8 +16,8 @@ alias l='ls -CF'
 # See bash(1) for more options.
 export HISTCONTROL=ignoredups:erasedups
 # Keep a larger Bash history.
-export HISTSIZE=50000
-export HISTFILESIZE=50000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
 # Append to the Bash history file, don't overwrite it.
 shopt -s histappend
@@ -28,7 +28,9 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 #   match all files and zero or more directories and subdirectories.
-shopt -s globstar
+#shopt -s globstar
+
+export PATH="/opt/homebrew/bin:$PATH"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
@@ -44,7 +46,8 @@ alias k=kubectl
 
 complete -F __start_kubectl k
 
-source ~/.config/task_completion.bash # Loads completion suggestions for the `task` tool.
+# Loads completion suggestions for the `task` tool.
+eval "$(task --completion bash)"
 
 # Neovim:
 export NVM_DIR="$HOME/.nvm"
@@ -60,7 +63,7 @@ alias ping=gping
 eval "$(starship init bash)"
 
 # Include brew in PATH.
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(brew shellenv)"
 
 # fdf (fuzzy finder) settings bellow:
 #
