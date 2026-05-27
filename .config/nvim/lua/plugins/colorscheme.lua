@@ -13,9 +13,16 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
-    opts = {
-      auto_integrations = true,
-    },
+    opts = function(_, opts)
+      local module = require("catppuccin.groups.integrations.bufferline")
+      if module then
+        module.get = module.get_theme
+      end
+      return opts
+    end,
+    -- opts = {
+    --   auto_integrations = true,
+    -- },
   },
 
   -- Configure LazyVim to load default theme.
